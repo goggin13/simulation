@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  app:
+    image: goggin13/simulation:latest
+    depends_on:
+      - database
+    ports:
+      - "3000:3000"
+    volumes:
+      - /Users/goggin/Documents/projects/simulation:/var/www/simulation
+      - gem_cache:/usr/local/bundle/gems
+      - node_modules:/app/node_modules
+    environment:
+      RAILS_ENV: development
+  database:
+    build:
+      dockerfile: db.Dockerfile
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  gem_cache:
+  db_data:
+  node_modules:
