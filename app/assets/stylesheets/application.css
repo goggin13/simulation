@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+#planet td {
+  width: 70px;
+  height: 70px;
+  border: thin solid black;
+}

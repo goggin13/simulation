@@ -1,0 +1,13 @@
+<h1><%= @planet.title %> | <%= @planet.age %></h1>
+
+<table id="planet">
+  <% @planet.rows.times do |r| %>
+    <tr>
+      <% @planet.columns.times do |c| %>
+        <td>
+          <%= render partial: "cell", locals: { cell: @planet_presenter.cell(r, c) } %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
