@@ -34,6 +34,8 @@ class Planet < ApplicationRecord
 
   def initialize!
     plants.destroy_all
+    animals.destroy_all
+
     new_growth(0.1)
     iterate do |r, c|
       if SecureRandom.rand <= 0.1

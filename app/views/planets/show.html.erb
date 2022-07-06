@@ -1,5 +1,11 @@
 <h1><%= @planet.title %> | <%= @planet.age %></h1>
 
+<p>
+  Plants: <%= @planet.plants.count %><br/>
+  Animals: <%= @planet.animals.count %><br/>
+</p>
+
+
 <table id="planet">
   <% @planet.rows.times do |r| %>
     <tr>
